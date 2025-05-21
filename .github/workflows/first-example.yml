@@ -1,0 +1,22 @@
+name: My First Workflow
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+    first_job:
+      runs-on: ubuntu-latest
+      step:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: List adn Read file
+        run: |
+          echo "Hello, world!"
+          ls -a
+          cat test.txt
+
+      - name: Generate ASCII Artwork
+        run: cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
