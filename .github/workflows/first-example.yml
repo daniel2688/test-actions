@@ -1,4 +1,5 @@
 name: My First Workflow
+
 on:
   push:
     branches:
@@ -6,22 +7,18 @@ on:
       - dev
 
 jobs:
-    first_job:
-      runs-on: ubuntu-latest
-      steps:
+  ascii_job:
+    runs-on: ubuntu-latest
+    steps:  # ✅ debe ser 'steps'
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: List adn Read file
+      - name: List and Read file
         run: |
           echo "Hello, world!"
           ls -a
-          cat test.txt
-          
-      - name: Install
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y cowsay
-          
+          cat dragon.txt
+
       - name: Generate ASCII Artwork
-        run: cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
+        run: |
+          cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
