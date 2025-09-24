@@ -16,7 +16,8 @@ jobs:
       - name: List and Read file
         run: |
           ls -a
-          cat dragon.txt
+          cat README.md
+
       - name: Install cowsay
         run: sudo apt-get update && sudo apt-get install -y cowsay
 
