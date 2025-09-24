@@ -13,14 +13,7 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Install Cowsay Program
-        run: sudo apt-get update && sudo apt-get install -y cowsay
-
-      - name: Execute Cowsay CMD
-        run: cowsay -f dragon "Run for cover, I am a Dragon....RAWR" >> dragon.txt
-
-      - name: Test File Exist
-        run: grep -i "dragon" dragon.txt
-      
-      - name: List Repo Files
-        run: ls -ltra
+      - name: Execcuting Shell Script
+        run: |
+          ls -ltra
+          ./ascii-script.sh
